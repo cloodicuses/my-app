@@ -41,11 +41,9 @@ function LandingPage() {
               <h2 className="ml-auto mr-auto text-center" md="8">
                 Use our image detection app.</h2>
             </Row>
-            <Row>
-              <div className="tensorflow">
+            <Row style={{justifyContent: "center"}}>
                 <App />
                 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
-              </div>
             </Row>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">

@@ -88,15 +88,65 @@ function App() {
 
   const { showImage = false, showResults = false } = stateMachine.states[state];
 
+  const styles = {
+    divStyle: {
+      display: "flex",
+      flexDirection: "column",
+      textAlign: "center",
+      alignItems: "center",
+      padding: "30px",
+    },
+
+    buttonStyle: {
+      width: "300px",
+      boxSizing: "border-box",
+      border: "solid 1px white",
+      background: "black",
+      color: "white",
+      fontSize: "24px",
+      margin: "auto",
+      padding: "10px",
+    },
+
+    inputStyle: {
+      width: "0.1px",
+      height: "0.1px",
+      opacity: "0",
+      overflow: "hidden",
+      position: "absolute",
+      zIndex: "-1",
+    },
+
+    imgStyle: {
+      width: "300px",
+      marginBottom: "25px",
+    },
+
+    ulStyle: {
+      width: "300px",
+      boxSizing: "border-box",
+      border: "solid 1px white",
+      background: "black",
+      color: "white",
+      fontSize: "24px",
+      margin: "auto",
+      padding: "10px",
+      listStyle: "none",
+      padding: "10px",
+      marginBottom: "25px",
+    },
+  }
+
+
   return (
-    <div className="tensorflow">
-      {showImage && <img alt="upload-preview" src={imageUrl} ref={imageRef} />}
-      {showResults && <ul>
-        {results.map(formatResult)}
-      </ul>}
-      <input type="file" accept="image/*" capture="camera" ref={inputRef} onChange={handleUpload} />
-      <button onClick={buttonProps[state].action}>{buttonProps[state].text}</button>
-    </div>
+      <div style={styles.divStyle}>
+        {showImage && <img alt="upload-preview" src={imageUrl} ref={imageRef} style={styles.imgStyle}/>}
+        {showResults && <ul style = {styles.ulStyle}>
+          {results.map(formatResult)}
+        </ul>}
+        <input type="file" accept="image/*" capture="camera" ref={inputRef} onChange={handleUpload} style={styles.inputStyle} />
+        <button style={styles.buttonStyle} onClick={buttonProps[state].action}>{buttonProps[state].text}</button>
+      </div>
   );
 }
 

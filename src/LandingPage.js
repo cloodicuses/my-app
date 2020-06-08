@@ -42,7 +42,7 @@ function LandingPage() {
                 Use our image detection app.</h2>
             </Row>
             <Row>
-              <div class="tensorflow">
+              <div className="tensorflow">
                 <App />
                 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
               </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import App from "./components/tensorflow/App"
 
 // reactstrap components
 import {
@@ -13,9 +14,9 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
+import ExamplesNavbar from "./components/Navbars/ExamplesNavbar.js";
+import LandingPageHeader from "./components/Headers/LandingPageHeader.js";
+import DefaultFooter from "./components/Footers/DefaultFooter.js";
 
 function LandingPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
@@ -37,6 +38,16 @@ function LandingPage() {
         <div className="section section-about-us">
           <Container>
             <Row>
+              <h2 className="ml-auto mr-auto text-center" md="8">
+                Use our image detection app.</h2>
+            </Row>
+            <Row>
+              <div class="tensorflow">
+                <App />
+                <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+              </div>
+            </Row>
+            <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
                 <h2 className="title">Who we are?</h2>
                 <h5 className="description">
@@ -56,7 +67,7 @@ function LandingPage() {
                     className="image-container image-left"
                     style={{
                       backgroundImage:
-                        "url(" + require("assets/img/login.jpg") + ")"
+                        "url(" + require("./assets/img/login.jpg") + ")"
                     }}
                   >
                     <p className="blockquote blockquote-info">
@@ -71,7 +82,7 @@ function LandingPage() {
                     className="image-container"
                     style={{
                       backgroundImage:
-                        "url(" + require("assets/img/bg3.jpg") + ")"
+                        "url(" + require("./assets/img/bg3.jpg") + ")"
                     }}
                   ></div>
                 </Col>
@@ -80,7 +91,7 @@ function LandingPage() {
                     className="image-container image-right"
                     style={{
                       backgroundImage:
-                        "url(" + require("assets/img/bg1.jpg") + ")"
+                        "url(" + require("./assets/img/bg1.jpg") + ")"
                     }}
                   ></div>
                   <h3>
@@ -131,7 +142,7 @@ function LandingPage() {
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("assets/img/avatar.jpg")}
+                      src={require("./assets/img/avatar.jpg")}
                     ></img>
                     <h4 className="title">Romina Hadid</h4>
                     <p className="category text-info">Model</p>
@@ -175,7 +186,7 @@ function LandingPage() {
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("assets/img/ryan.jpg")}
+                      src={require("./assets/img/ryan.jpg")}
                     ></img>
                     <h4 className="title">Ryan Tompson</h4>
                     <p className="category text-info">Designer</p>
@@ -211,7 +222,7 @@ function LandingPage() {
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("assets/img/eva.jpg")}
+                      src={require("./assets/img/eva.jpg")}
                     ></img>
                     <h4 className="title">Eva Jenner</h4>
                     <p className="category text-info">Fashion</p>

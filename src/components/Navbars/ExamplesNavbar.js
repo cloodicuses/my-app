@@ -89,11 +89,11 @@ function ExamplesNavbar() {
           </UncontrolledDropdown>
           <div className="navbar-translate">
             <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/index?ref=nukr-examples-navbar"
+              href="/"
               target="_blank"
               id="navbar-brand"
             >
-              Now Ui Kit
+              Clood's wicked sick app
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
               Designed by Invision. Coded by Creative Tim
@@ -120,17 +120,17 @@ function ExamplesNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink to="/index" tag={Link}>
-                  Back to Kit
+                  Back to Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/now-ui-kit-react/issues?ref=creativetim">
+                <NavLink href="https://google.co.uk">
                   Have an issue?
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                  href="https://twitter.com/Cloodicus"
                   target="_blank"
                   id="twitter-tooltip"
                 >

@@ -1,25 +1,21 @@
-body {
-  color: white;
-  background: black;
- }
- div {
+.tensorflow {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   padding: 30px;
- }
- input { 
+}
+
+.tensorflow input {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -1;
- }
- button,
- label,
- ul {
+}
+
+.tensorflow button, label, ul {
   width: 300px;
   box-sizing: border-box;
   border: solid 1px white;
@@ -28,13 +24,15 @@ body {
   font-size: 24px;
   margin: auto;
   padding: 10px;
- }
- img {
+}
+
+.tensorflow img {
   width: 300px;
   margin-bottom: 25px;
- }
- ul {
+}
+
+.tensorflow ul {
   list-style: none;
   padding: 10px;
   margin-bottom: 25px;
- }
+}

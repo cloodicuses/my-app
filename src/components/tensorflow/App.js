@@ -3,23 +3,29 @@ import * as mobilenet from '@tensorflow-models/mobilenet';
 import * as tf from '@tensorflow/tfjs';
 import '@tensorflow/tfjs-backend-webgl';
 //import { setWasmPath } from '@tensorflow/tfjs-backend-wasm'
-import logo from './logo.svg';
-import './App.css';
+import logo from "../../../src/logo.svg";
+//import './App.css';
+
+// Styles for ui-kit
+import "../../assets/css/bootstrap.min.css"
+import "../../assets/scss/now-ui-kit.scss";
+import "../../assets/demo/demo.css";
+import "../../assets/demo/nucleo-icons-page-styles.css";
 
 //setWasmPath('/tfjs-backend-wasm.wasm')
 //tf.setBackend('wasm').then(console.log('The Backend is', tf.getBackend()))
 
 const stateMachine = {
-  initial: 'initial', 
+  initial: 'initial',
   states: {
-    initial: { on: {next: 'loadingModel' } },
-    loadingModel: { on: {next: 'awaitingUpload' } },
-   awaitingUpload: { on: {next: 'ready' } },
-   ready: { on: {next: 'classifying' }, showImage: true },
-   classifying: { on: {next: 'complete' }, },
-   complete: { on: {next: 'awaitingUpload' }, showImage: true, showResults: true}
+    initial: { on: { next: 'loadingModel' } },
+    loadingModel: { on: { next: 'awaitingUpload' } },
+    awaitingUpload: { on: { next: 'ready' } },
+    ready: { on: { next: 'classifying' }, showImage: true },
+    classifying: { on: { next: 'complete' }, },
+    complete: { on: { next: 'awaitingUpload' }, showImage: true, showResults: true }
   }
-  
+
 }
 
 const reducer = (currentState, event) => stateMachine.states[currentState].on[event] || stateMachine.initial;
@@ -47,43 +53,43 @@ function App() {
     const mobilenetModel = await mobilenet.load();
     setModel(mobilenetModel);
     next()
- }
+  }
 
- const handleUpload = e => {
+  const handleUpload = e => {
     const { files } = e.target;
     if (files.length > 0) {
       const url = URL.createObjectURL(files[0]);
       setImageUrl(url);
       next();
     }
- }
+  }
 
- const identify = async () => {
-   next();
-      const classificationResults = await model.classify(imageRef.current);
-      setResults(classificationResults)
-   next();
- }
+  const identify = async () => {
+    next();
+    const classificationResults = await model.classify(imageRef.current);
+    setResults(classificationResults)
+    next();
+  }
 
- const reset = () => {
-   setResults([]);
-   setImageUrl(null);
-   next();
- }
+  const reset = () => {
+    setResults([]);
+    setImageUrl(null);
+    next();
+  }
 
   const buttonProps = {
     initial: { text: 'Load Model', action: loadModel },
-    loadingModel: { text: 'Loading Model...', action: () => {} },
+    loadingModel: { text: 'Loading Model...', action: () => { } },
     awaitingUpload: { text: 'Upload Photo', action: () => inputRef.current.click() },
     ready: { text: 'Identify', action: identify },
-    classifying: { text: 'Identifying', action: () => {} },
-    complete: {text: 'Reset', action: reset },
+    classifying: { text: 'Identifying', action: () => { } },
+    complete: { text: 'Reset', action: reset },
   }
 
-  const { showImage  = false, showResults = false } = stateMachine.states[state];
+  const { showImage = false, showResults = false } = stateMachine.states[state];
 
   return (
-    <div>
+    <div className="tensorflow">
       {showImage && <img alt="upload-preview" src={imageUrl} ref={imageRef} />}
       {showResults && <ul>
         {results.map(formatResult)}

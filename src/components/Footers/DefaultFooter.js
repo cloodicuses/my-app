@@ -15,15 +15,15 @@ function DefaultFooter() {
             <ul>
               <li>
                 <a
-                  href="https://www.creative-tim.com?ref=nukr-default-footer"
+                  href="https://github.com/cloodicuses"
                   target="_blank"
                 >
-                  Creative Tim
+                  Claudia Maw
                 </a>
               </li>
               <li>
                 <a
-                  href="http://presentation.creative-tim.com?ref=nukr-default-footer"
+                  href="/about-us"
                   target="_blank"
                 >
                   About Us
@@ -45,14 +45,14 @@ function DefaultFooter() {
               href="https://www.invisionapp.com?ref=nukr-default-footer"
               target="_blank"
             >
-              Invision
+              A React Website I stole this from
             </a>
             . Coded by{" "}
             <a
-              href="https://www.creative-tim.com?ref=nukr-default-footer"
+              href="https://github.com/cloodicuses"
               target="_blank"
             >
-              Creative Tim
+              Claudia Maw
             </a>
             .
           </div>

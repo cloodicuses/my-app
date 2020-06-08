@@ -13,10 +13,10 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "wasm": "cp node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm.wasm ./public", 
-    "winwasm": "PowerShell -Command cp node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm.wasm ./public -Force",   
-    "start": "yarn wasm && react-scripts start",
-    "build": "yarn wasm && react-scripts build",
+    "wasm": "cp node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm.wasm ./public",
+    "winwasm": "PowerShell -Command cp node_modules/@tensorflow/tfjs-backend-wasm/dist/tfjs-backend-wasm.wasm ./public -Force",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -1,6 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// styles
+import "./assets/css/bootstrap.min.css";
+import "./assets/css/now-ui-kit.css";
+// import "assets/css/now-ui-kit.min.css";
+// import "assets/css/now-ui-kit.css.map";
+import "./assets/demo/demo.css";
+
+// Clood original style
 import './index.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
